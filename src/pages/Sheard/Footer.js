@@ -2,7 +2,8 @@ import React from 'react';
 import footer from '../../assets/images/footer.png'
 const Footer = () => {
     return (
-        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-8">
+        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-8
+        ">
             <div class="grid grid-flow-col gap-4">
                 <a class="link link-hover">About us</a>
                 <a class="link link-hover">Contact</a>
@@ -17,7 +18,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                <p>Copyright © 2022 - All right reserved </p>
             </div>
         </footer>
     );
