@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Sheard/Loading';
+import { Link } from 'react-router-dom';
 const Login = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -13,11 +14,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     let errorMassage
-    if (true || loading || gloading) {
+    if ( loading || gloading) {
        return <Loading></Loading>
     }
     if (error || gerror) {
         errorMassage = <p className='text-red-500'>{error?.message || gerror?.message}</p>
+    }
+    if (user || guser) {
+        console.log(user,guser);
     }
  
     const onSubmit = data => {
@@ -87,6 +91,7 @@ const Login = () => {
                         <input className='btn w-full max-w-xs' type="submit" value="Login" />
 
                     </form>
+                    <p><small>New to Doctors porter portel<Link  className='text-primary' to={'/Signup'}>Create an account</Link ></small></p> 
                     {/* or container */}
                     <div className="divider">OR</div>
                     {/* Google Login */}
