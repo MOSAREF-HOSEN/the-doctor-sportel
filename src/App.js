@@ -9,7 +9,7 @@ import Apponment from './pages/Apponment/Apponment';
 
 function App() {
   return (
-    <div className='bg-white max-w-7xl mx-auto px-12'>
+    <div  className=' max-w-7xl mx-auto px-12'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
