@@ -8,10 +8,10 @@ const RequareAuth = ({children}) => {
     const [user, loading, error] = useAuthState(auth);
     const location = useLocation()
     if(loading){
-        <Loading></Loading>
+        return <Loading></Loading>
     }
     if(!user){
-        <Navigate to={'/login'} state={{ from: location }} replace></Navigate>
+       return <Navigate to={'/login'} state={{ from: location }} replace></Navigate>
     }
     return children;
 };

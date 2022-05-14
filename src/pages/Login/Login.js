@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Sheard/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -14,23 +14,31 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     let errorMassage
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
+
+    useEffect(()=>{
+        if (user || guser) {
+            navigate(from,{replace:true})
+        }
+    },[user,guser])
+
     if ( loading || gloading) {
        return <Loading></Loading>
     }
     if (error || gerror) {
         errorMassage = <p className='text-red-500'>{error?.message || gerror?.message}</p>
     }
-    if (user || guser) {
-        console.log(user,guser);
-    }
+    
  
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email,data.password)
-        console.log(data)
+       
     };
 
     return (
-        <div className='flex h-screen justify-center items-center mt-12'>
+        <div className='flex h-screen justify-center items-center mt-6'>
             <div className="card w-96  shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-3xl font-bold text-teal-600">Login</h2>
@@ -97,7 +105,7 @@ const Login = () => {
                     {/* Google Login */}
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-accent">Continue with Google</button>
+                        className="btn btn-outline btn-success">Continue with Google</button>
 
                 </div>
             </div>

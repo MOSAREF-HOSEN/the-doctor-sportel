@@ -15,7 +15,7 @@ const Service = ({ service, setTritment}) => {
                 <div className="card-actions justify-center">
                   
                     <label 
-                    for="booking" 
+                    htmlFor="booking" 
                     disabled={slots.length === 0}
                     onClick={() => setTritment(service)}
                     className="btn btn-primary uppercase text-white font-semibold bg-gradient-to-r bg-green-400">Book Apponmentl</label>
