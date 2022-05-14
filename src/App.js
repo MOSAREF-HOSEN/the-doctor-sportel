@@ -13,33 +13,36 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashbord from './pages/Apponment/Dashbord/Dashbord';
 import MyApponment from './pages/Apponment/Dashbord/MyApponment';
 import MyReview from './pages/Apponment/Dashbord/MyReview';
+import Historoy from './pages/Apponment/Dashbord/Historoy';
+
 
 function App() {
   return (
-    <div  className=' max-w-7xl mx-auto px-12'>
+    <div className=' max-w-7xl mx-auto px-12'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={
           <About></About>
-          }></Route>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/appointment' element={
-        <RequareAuth>
-           <Apponment></Apponment>
-        </RequareAuth>}></Route>
+          <RequareAuth>
+            <Apponment></Apponment>
+          </RequareAuth>}></Route>
 
         <Route path='/dashbord' element={
-        <RequareAuth>
-           <Dashbord/>
-        </RequareAuth>}>
+          <RequareAuth>
+            <Dashbord />
+          </RequareAuth>}>
           <Route index element={<MyApponment></MyApponment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path='histroy' element={<Historoy></Historoy>}></Route>
         </Route>
 
       </Routes>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }
