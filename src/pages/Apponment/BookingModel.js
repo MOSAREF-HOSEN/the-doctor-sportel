@@ -3,13 +3,15 @@ import { format } from 'date-fns';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {  toast } from 'react-toastify';
-const BookingModel = ({ tritment, date,setTritment }) => {
+const BookingModel = ({ tritment, date,setTritment,refetch }) => {
     const {_id, name, slots } = tritment
     const [user, loading, error] = useAuthState(auth);
     const formatedDate = format(date, 'pp')
+    
     const handelBooking = e =>{
         e.preventDefault()
         const slot = e.target.slot.value
+
         const booking ={
             treatmentId: _id,
             treatment: name,
@@ -30,13 +32,14 @@ const BookingModel = ({ tritment, date,setTritment }) => {
         .then(res=>res.json())
         .then(data=>{
             //close the modal
-            console.log(data);
+            // console.log(data);
             if(data.success){
               toast(`appointment is set${formatedDate} at ${slot}`,)
             } 
             else{
                 toast.error(`allrady have an appointment${data.booking?.date} at ${data.booking?.slot}`,)
             }
+            refetch()
             setTritment(null)
         })
 
