@@ -29,7 +29,7 @@ const AvalableApponment = ({ date }) => {
                     services?.map(service => <Service
                         key={service._id}
                         service={service}
-                        refetch={refetch}
+                        
                         setTritment={setTritment}
                     ></Service>)
                 }
@@ -38,6 +38,7 @@ const AvalableApponment = ({ date }) => {
                 tritment && <BookingModel
                     date={date}
                     tritment={tritment}
+                    refetch={refetch}
                     setTritment={setTritment}
                 ></BookingModel>
             }
