@@ -11,6 +11,8 @@ import RequareAuth from './pages/Login/RequareAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashbord from './pages/Apponment/Dashbord/Dashbord';
+import MyApponment from './pages/Apponment/Dashbord/MyApponment';
+import MyReview from './pages/Apponment/Dashbord/MyReview';
 
 function App() {
   return (
@@ -27,10 +29,15 @@ function App() {
         <RequareAuth>
            <Apponment></Apponment>
         </RequareAuth>}></Route>
+
         <Route path='/dashbord' element={
         <RequareAuth>
            <Dashbord/>
-        </RequareAuth>}></Route>
+        </RequareAuth>}>
+          <Route index element={<MyApponment></MyApponment>}></Route>
+          <Route path='review' element={<MyReview></MyReview>}></Route>
+        </Route>
+
       </Routes>
       <ToastContainer/>
     </div>
