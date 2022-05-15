@@ -13,7 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashbord from './pages/Apponment/Dashbord/Dashbord';
 import MyApponment from './pages/Apponment/Dashbord/MyApponment';
 import MyReview from './pages/Apponment/Dashbord/MyReview';
-import Historoy from './pages/Apponment/Dashbord/Historoy';
+import User from './pages/Apponment/Dashbord/User';
+import Histri from './pages/Apponment/Dashbord/Histri';
 
 
 function App() {
@@ -32,13 +33,11 @@ function App() {
             <Apponment></Apponment>
           </RequareAuth>}></Route>
 
-        <Route path='/dashbord' element={
-          <RequareAuth>
-            <Dashbord />
-          </RequareAuth>}>
+        <Route path='dashbord' element={ <RequareAuth> <Dashbord /></RequareAuth>}>
           <Route index element={<MyApponment></MyApponment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
-          <Route path='histroy' element={<Historoy></Historoy>}></Route>
+          <Route path='histri' element={<Histri></Histri>}></Route>
+          <Route path='users' element={<User></User>}></Route>
         </Route>
 
       </Routes>
