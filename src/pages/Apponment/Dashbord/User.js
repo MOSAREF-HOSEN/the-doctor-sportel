@@ -4,11 +4,16 @@ import Loading from '../../Sheard/Loading';
 import UserRow from './UserRow';
 
 const User = () => {
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/user').then(res => res.json()))
+    const { data: users, isLoading,refetch } = useQuery('users', () => fetch('http://localhost:5000/user',{
+        method:'GET',
+        headers:{
+            authorization: `Bearar ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log(users);
+    // console.log(users);
     return (
         <div>
             <h2 className='text-2xl text-secondary'>All users:{users.length}</h2>
@@ -28,6 +33,7 @@ const User = () => {
                            users.map(user=><UserRow
                            key={user._id}
                            user={user}
+                           refetch={refetch}
                            ></UserRow>)
                        }
                         

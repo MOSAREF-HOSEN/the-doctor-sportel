@@ -15,6 +15,8 @@ import MyApponment from './pages/Apponment/Dashbord/MyApponment';
 import MyReview from './pages/Apponment/Dashbord/MyReview';
 import User from './pages/Apponment/Dashbord/User';
 import Histri from './pages/Apponment/Dashbord/Histri';
+import RequireAdmin from '../src/pages/Login/RequireAdmin';
+import AddDoctor from './pages/Apponment/Dashbord/AddDoctor';
 
 
 function App() {
@@ -26,8 +28,7 @@ function App() {
         <Route path='/about' element={
           <About></About>
         }></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+       
         <Route path='/appointment' element={
           <RequareAuth>
             <Apponment></Apponment>
@@ -37,9 +38,12 @@ function App() {
           <Route index element={<MyApponment></MyApponment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
           <Route path='histri' element={<Histri></Histri>}></Route>
-          <Route path='users' element={<User></User>}></Route>
+          <Route path='users' element={<RequireAdmin><User></User></RequireAdmin>}></Route>
+          <Route path='addDoctor' element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
         </Route>
 
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
       <ToastContainer />
     </div>

@@ -12,7 +12,7 @@ const AvalableApponment = ({ date }) => {
     // const [services,setServices] = useState([])
     const [tritment, setTritment] = useState(null)
 
-    const formatedDate = format(date, 'pp')
+    const formatedDate = format(date, 'PP')
     const {data:services,isLoading,refetch } = useQuery(['available',formatedDate], () =>  fetch(`http://localhost:5000/available?date=${formatedDate}`)
         .then(res=>res.json()))
         
