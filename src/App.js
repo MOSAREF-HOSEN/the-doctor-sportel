@@ -17,6 +17,7 @@ import User from './pages/Apponment/Dashbord/User';
 import Histri from './pages/Apponment/Dashbord/Histri';
 import RequireAdmin from '../src/pages/Login/RequireAdmin';
 import AddDoctor from './pages/Apponment/Dashbord/AddDoctor';
+import ManageDoctor from './pages/Apponment/Dashbord/ManageDoctor';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path='histri' element={<Histri></Histri>}></Route>
           <Route path='users' element={<RequireAdmin><User></User></RequireAdmin>}></Route>
           <Route path='addDoctor' element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
+          <Route path='manegedoctor' element={<RequireAdmin><ManageDoctor></ManageDoctor></RequireAdmin>}></Route>
         </Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
