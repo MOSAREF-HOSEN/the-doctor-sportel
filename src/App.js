@@ -18,6 +18,7 @@ import Histri from './pages/Apponment/Dashbord/Histri';
 import RequireAdmin from '../src/pages/Login/RequireAdmin';
 import AddDoctor from './pages/Apponment/Dashbord/AddDoctor';
 import ManageDoctor from './pages/Apponment/Dashbord/ManageDoctor';
+import Payment from './pages/Apponment/Dashbord/Payment';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route index element={<MyApponment></MyApponment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
           <Route path='histri' element={<Histri></Histri>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<RequireAdmin><User></User></RequireAdmin>}></Route>
           <Route path='addDoctor' element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
           <Route path='manegedoctor' element={<RequireAdmin><ManageDoctor></ManageDoctor></RequireAdmin>}></Route>

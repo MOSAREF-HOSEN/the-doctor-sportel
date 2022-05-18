@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {  toast } from 'react-toastify';
 const BookingModel = ({ tritment, date,setTritment,refetch }) => {
-    const {_id, name, slots } = tritment
+    const {_id, name, slots,price } = tritment
     const [user, loading, error] = useAuthState(auth);
     const formatedDate = format(date, 'pp')
     
@@ -17,6 +17,7 @@ const BookingModel = ({ tritment, date,setTritment,refetch }) => {
             treatment: name,
             date: formatedDate,
             slot,
+            price,
             patient:user.email,
             patientName:user.displayName,
             phone: e.target.phone.value

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Sheard/Loading';
+import DeleteConfromdoctor from './DeleteConfromdoctor';
 import DoctorRw from './DoctorRw';
 
 const ManageDoctor = () => {
-    const { data: doctors, isLoading } = useQuery('doctors', () => fetch('http://localhost:5000/doctor', {
+    const [deleteDoctor,setDeleteDoctor] = useState(null)
+    const { data: doctors, isLoading,refetch } = useQuery('doctors', () => fetch('http://localhost:5000/doctor', {
         headers: {
             'content-type': 'application/json',
             authorization: `Bearar ${localStorage.getItem('accessToken')}`
@@ -31,16 +33,23 @@ const ManageDoctor = () => {
                     <tbody>
                         {/* <!-- row 1 --> */}
                        {
-                           doctors.map((doctor,index)=><DoctorRw
+                           doctors?.map((doctor,index)=><DoctorRw
                            key={doctor._key}
                            index={index}
                            doctor={doctor}
+                           refetch={refetch}
+                           setDeleteDoctor={setDeleteDoctor}
                            ></DoctorRw>)
                        }
                     
                     </tbody>
                 </table>
             </div>
+            {deleteDoctor && <DeleteConfromdoctor
+            deleteDoctor={setDeleteDoctor}
+            refetch={refetch}
+            setDeleteDoctor={setDeleteDoctor}
+            ></DeleteConfromdoctor>}
         </div>
     );
 };

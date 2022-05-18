@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Service = ({ service, setTritment}) => {
-    const { name, slots } = service
+    const { name, slots,price } = service
     return (
         <div className="card lg:max-w-lg bg-white shadow-xl">
             <div className="card-body">
@@ -12,6 +12,7 @@ const Service = ({ service, setTritment}) => {
                         : <span className='text-red-500'>No slot Avalable</span>
                 }</p>
                 <p>{slots.length}{slots.length > 1 ? 'spaces' : 'space'} avaleble</p>
+                <p className='text-center text-primary '><small>${price}</small></p>
                 <div className="card-actions justify-center">
                   
                     <label 
