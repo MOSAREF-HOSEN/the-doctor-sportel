@@ -12,7 +12,7 @@ const MyApponment = () => {
             fetch(`http://localhost:5000/booking?patient=${user.email}`, {
                 method: 'GET',
                 headers: {
-                    'authorization': `Bearar ${localStorage.getItem('accessToken')}`
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res =>{ 

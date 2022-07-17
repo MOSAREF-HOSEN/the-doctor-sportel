@@ -4,7 +4,7 @@ const Review = ({ review }) => {
     return (
         <div className="card lg:max-w-lg bg-white shadow-xl">
             <div className="card-body">
-                <h2 className='text-secondary text-xl'>{review.name}</h2>
+                <h2 className='text-secondary text-3xl text-center'>{review.name}</h2>
                 <p>If a dog chews shoes whose Lorem ipsum dolor sit amet. shoes does he choose?</p>
                 <div className='flex items-center'>
                     <div className="avatar">

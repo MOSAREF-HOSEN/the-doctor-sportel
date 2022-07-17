@@ -29,7 +29,7 @@ const Contact = () => {
           placeholder='Your message'
           rows={6}
         ></textarea>
-        <button className="btn btn-primary uppercase text-white font-semibold bg-gradient-to-r from-violet-500 to-fuchsia-500">Get Started</button>
+        <button className="btn btn-primary  uppercase text-white font-semibold bg-gradient-to-r from-primary to-secondary">Get Started</button>
       </div>
     </div>
   );

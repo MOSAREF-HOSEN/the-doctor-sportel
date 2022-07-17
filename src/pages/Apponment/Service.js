@@ -3,9 +3,9 @@ import React from 'react';
 const Service = ({ service, setTritment}) => {
     const { name, slots,price } = service
     return (
-        <div className="card lg:max-w-lg bg-white shadow-xl">
+        <div className="card lg:max-w-lg text-center bg-white shadow-xl">
             <div className="card-body">
-                <h2 className="card-title text-xl text-green-400">{name}</h2>
+                <h2 className="text-3xl   text-green-400">{name}</h2>
                 <p>{
                     slots.length > 0
                         ? <span>{slots[0]}</span>
