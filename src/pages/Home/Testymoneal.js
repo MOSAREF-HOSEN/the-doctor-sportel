@@ -29,7 +29,7 @@ const Testymoneal = () => {
         }
     ]
     return (
-        <section className='my-12 mt-16'>
+        <section id='Review' className='my-12 mt-16'>
             <div className='flex justify-between'>
                 <div>
                     <h4 className="text-xl text-secondary font-bold">Testymoneal</h4>

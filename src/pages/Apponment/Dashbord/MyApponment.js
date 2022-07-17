@@ -50,7 +50,7 @@ const MyApponment = () => {
                     </thead>
                     <tbody>
                         {
-                            apponments.map((a, index) => <tr>
+                            apponments.map((a, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{a.patientName}</td>
                                 <td>{a.date}</td>

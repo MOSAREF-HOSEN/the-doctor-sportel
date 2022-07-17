@@ -13,9 +13,9 @@ const Navbar = () => {
     const manuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/appointment'>Appointment</Link></li>
-        <li><Link to='/review'>Review</Link></li>
-        <li><Link to='/contact'>contact</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><a href="#Review">Review </a></li>
+        <li> <a href="#contact">Contact </a></li>
+        <li> <a href="#about"> About </a></li>
         {
           user? <li><Link to='/dashbord'>Dashbord</Link></li>:''
 

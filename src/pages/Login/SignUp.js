@@ -130,7 +130,7 @@ const SignUp = () => {
                     {/* Google Login */}
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-accent">Continue with Google</button>
+                        className="btn btn-outline btn-success">Continue with Google</button>
 
                 </div>
             </div>

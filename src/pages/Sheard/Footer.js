@@ -2,7 +2,7 @@ import React from 'react';
 import footer from '../../assets/images/footer.png'
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-8
+        <footer id='about' className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-8
         ">
             <div className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>

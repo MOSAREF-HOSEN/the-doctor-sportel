@@ -4,7 +4,7 @@ import appointment from '../../assets/images/appointment.png';
 
 const Contact = () => {
   return (
-    <div style={{
+    <div id="contact" style={{
         background:`url(${appointment})`
     }} className='bg-primary px-10 py-14 '>
       <div className='text-center pb-14 text-white'>

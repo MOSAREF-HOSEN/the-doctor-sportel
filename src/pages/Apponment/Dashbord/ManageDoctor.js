@@ -17,7 +17,7 @@ const ManageDoctor = () => {
     }
     return (
         <div>
-            <h2 className='text-3xl'>Maneg doctor:{doctors.length}</h2>
+            <h2 className='text-3xl text-secondary  font-serif m-4'>Manage doctor</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     {/* <!-- head --> */}
