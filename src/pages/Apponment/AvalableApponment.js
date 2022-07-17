@@ -13,7 +13,7 @@ const AvalableApponment = ({ date }) => {
     const [tritment, setTritment] = useState(null)
 
     const formatedDate = format(date, 'PP')
-    const {data:services,isLoading,refetch } = useQuery(['available',formatedDate], () =>  fetch(`http://localhost:5000/available?date=${formatedDate}`)
+    const {data:services,isLoading,refetch } = useQuery(['available',formatedDate], () =>  fetch(`https://quiet-woodland-65141.herokuapp.com/available?date=${formatedDate}`)
         .then(res=>res.json()))
         
 

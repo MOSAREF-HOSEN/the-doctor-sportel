@@ -2,7 +2,7 @@ import React from 'react';
 import treatment from '../../assets/images/treatment.png'
 const Exceptional = () => {
     return (
-        <div className="hero min-h-screen px-12">
+        <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={treatment}className="max-w-sm rounded-lg shadow-2xl" />
                     <div>

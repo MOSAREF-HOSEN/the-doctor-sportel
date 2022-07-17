@@ -8,7 +8,7 @@ import doctor from '../../../assets/images/login.png'
 const AddDoctor = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: services, isLoading } = useQuery('services', () => fetch(`http://localhost:5000/service`).then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch(`https://quiet-woodland-65141.herokuapp.com/service`).then(res => res.json()))
 
 
 
@@ -38,7 +38,7 @@ const AddDoctor = () => {
                         img: img
                     }
                     //send to your datbasse
-                    fetch(`http://localhost:5000/doctor`, {
+                    fetch(`https://quiet-woodland-65141.herokuapp.com/doctor`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -128,7 +128,7 @@ const AddDoctor = () => {
                             <span className="label-text">speciality</span>
                         </label>
 
-                        <select {...register('speciality')} class="select input-bordered  w-full max-w-xs">
+                        <select {...register('speciality')} className="select input-bordered  w-full max-w-xs">
                             {
                                 services.map(servic => <option
                                     key={servic._id}

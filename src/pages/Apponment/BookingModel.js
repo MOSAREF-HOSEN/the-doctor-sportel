@@ -23,7 +23,7 @@ const BookingModel = ({ tritment, date,setTritment,refetch }) => {
             phone: e.target.phone.value
         }
 
-        fetch('http://localhost:5000/booking',{
+        fetch('https://quiet-woodland-65141.herokuapp.com/booking',{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'
